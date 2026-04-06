@@ -1,0 +1,39 @@
+{
+  "kind": "collectionType",
+  "collectionName": "cennkik_pozycjas",
+  "info": {
+    "singularName": "cennkik-pozycja",
+    "pluralName": "cennkik-pozycjas",
+    "displayName": "cennkik-pozycja"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "nazwa": {
+      "type": "string"
+    },
+    "opis": {
+      "type": "string"
+    },
+    "cena": {
+      "type": "decimal"
+    },
+    "jednostka": {
+      "type": "enumeration",
+      "enum": [
+        "doba",
+        "dzień",
+        "jednorazowo",
+        "godz."
+      ]
+    },
+    "cennik_sekcja": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::cennik-sekcja.cennik-sekcja",
+      "inversedBy": "cennkik_pozycjas"
+    }
+  }
+}

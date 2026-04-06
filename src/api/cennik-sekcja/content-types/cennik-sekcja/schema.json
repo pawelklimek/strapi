@@ -1,0 +1,24 @@
+{
+  "kind": "collectionType",
+  "collectionName": "cennik_sekcjas",
+  "info": {
+    "singularName": "cennik-sekcja",
+    "pluralName": "cennik-sekcjas",
+    "displayName": "cennik-sekcja"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "nazwa": {
+      "type": "string"
+    },
+    "cennkik_pozycjas": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::cennkik-pozycja.cennkik-pozycja",
+      "mappedBy": "cennik_sekcja"
+    }
+  }
+}
