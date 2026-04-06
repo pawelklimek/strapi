@@ -529,6 +529,38 @@ export interface ApiCommonCommon extends Struct.SingleTypeSchema {
   };
 }
 
+export interface ApiZdjeciaHotelZdjeciaHotel
+  extends Struct.CollectionTypeSchema {
+  collectionName: 'zdjecia_hotels';
+  info: {
+    displayName: 'zdjecia-hotel';
+    pluralName: 'zdjecia-hotels';
+    singularName: 'zdjecia-hotel';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::zdjecia-hotel.zdjecia-hotel'
+    > &
+      Schema.Attribute.Private;
+    publishedAt: Schema.Attribute.DateTime;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    zdjecia: Schema.Attribute.Media<
+      'images' | 'files' | 'videos' | 'audios',
+      true
+    >;
+  };
+}
+
 export interface PluginContentReleasesRelease
   extends Struct.CollectionTypeSchema {
   collectionName: 'strapi_releases';
@@ -1043,6 +1075,7 @@ declare module '@strapi/strapi' {
       'api::cennik-sekcja.cennik-sekcja': ApiCennikSekcjaCennikSekcja;
       'api::cennkik-pozycja.cennkik-pozycja': ApiCennkikPozycjaCennkikPozycja;
       'api::common.common': ApiCommonCommon;
+      'api::zdjecia-hotel.zdjecia-hotel': ApiZdjeciaHotelZdjeciaHotel;
       'plugin::content-releases.release': PluginContentReleasesRelease;
       'plugin::content-releases.release-action': PluginContentReleasesReleaseAction;
       'plugin::i18n.locale': PluginI18NLocale;

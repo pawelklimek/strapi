@@ -1,0 +1,25 @@
+{
+  "kind": "collectionType",
+  "collectionName": "zdjecia_hotels",
+  "info": {
+    "singularName": "zdjecia-hotel",
+    "pluralName": "zdjecia-hotels",
+    "displayName": "zdjecia-hotel"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "zdjecia": {
+      "type": "media",
+      "multiple": true,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    }
+  }
+}
